@@ -3,6 +3,7 @@ const mongoose  = require('mongoose');
 require('dotenv').config();
 
 const userRoutes = require('./routes/user');
+const postRoutes = require('./routes/posts');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -10,6 +11,7 @@ const port = process.env.PORT || 3000;
 //MIDDLEWARES
 app.use(express.json());
 app.use('/api', userRoutes);
+app.use('/api', postRoutes);
 
 //ROUTES
 app.get('/', (req, res) => {
