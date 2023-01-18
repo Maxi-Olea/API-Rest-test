@@ -19,7 +19,7 @@ app.use('/api', commentRoutes);
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.send('Saludirijillos!');
+    res.sendFile('index.html', { root: Path2D.join(__dirname, 'public')  });
 });
 
 //Mongo Connection
