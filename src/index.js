@@ -18,7 +18,7 @@ app.use('/api', commentRoutes);
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.send('Welcome to my API');
+    res.sendFile('index.html', { root: __dirname });
 });
 
 //Mongo Connection

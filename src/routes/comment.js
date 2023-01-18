@@ -22,7 +22,7 @@ router.get('/comments', (req, res) => {
 router.get('/comments/:postId', (req, res) => {
     const comment = commentSchema;
     const { postId } = req.params;
-    comment.findOne({ postId })
+    comment.find({ postId })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
