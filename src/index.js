@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 
 //MIDDLEWARES
 app.use(express.json());
+app.use(express.static('public'));
 app.use('/api', userRoutes);
 app.use('/api', postRoutes);
 app.use('/api', commentRoutes); 
@@ -18,7 +19,7 @@ app.use('/api', commentRoutes);
 
 //ROUTES
 app.get('/', (req, res) => {
-    res.sendFile('index.html', { root: __dirname });
+    res.send('Saludirijillos!');
 });
 
 //Mongo Connection
